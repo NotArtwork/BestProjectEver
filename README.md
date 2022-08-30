@@ -48,14 +48,4 @@
  
    School.courses
  
- 
-## Controllers  (C)
-   Movies
-      
-   Showtimes
-   Theaters
-   Seats
- 
-## View - ReactJS    (V)
- 
-   exists in the `/client` folder
+
