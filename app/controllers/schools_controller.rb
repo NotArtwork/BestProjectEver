@@ -4,4 +4,6 @@ class SchoolsController < ApplicationController
         school = School.all
         render json: school.to_json(method: [:course])
     end
+
+    
 end
