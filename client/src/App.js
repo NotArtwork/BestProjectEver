@@ -6,9 +6,9 @@ import Header from './components/Header'
 const App = () => {
 
   const [schoolData, setSchoolData] = useState([])
-  const [courseData, setCourseData] = useState([]) //not convinced we need this here
 
 
+  //I don't think we need to useEffect if we are using asynch
   useEffect(() => {
 
     const getSchool = async () => {
@@ -21,18 +21,6 @@ const App = () => {
   }, [])
 
 
-  useEffect(() => {
-
-    const getCourse = async () => {
-      let req = await fetch('http://localhost:3000/courses')
-      let res = await req.json()
-      console.log(res)
-      setCourseData(res)
-    }
-    getCourse()
-  }, [])
-
-
 
 
   return (
@@ -40,7 +28,7 @@ const App = () => {
       <Header/>
       <Routes > 
         <Route path="/" element={ <Home schoolData={schoolData}/>} />
-        <Route path="/course" element={<Course />} />
+        <Route path="/course" element={<Course courseData={courseData}/>} />
       </Routes > 
     </BrowserRouter>
   );

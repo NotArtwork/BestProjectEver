@@ -1,10 +1,32 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
+
 
 
 const SchoolCard = ({school}) => {
 
+    const [courseData, setCourseData] = useState([]) //not convinced we need this here
+
+    let navigate = useNavigate(); 
+
+    
+   
+    useEffect(() => {
+
+        const getCourse = async () => {
+          let req = await fetch('http://localhost:3000/courses')
+          let res = await req.json()
+          console.log(res)
+          setCourseData(res.map((element)=> school_id === {school.id}))
+        //   I know that is incorrect but that's the gist of it
+        }
+        getCourse()
+      }, [])
+
+
     const handleCourseClick =(event)=>{
-        event.target.value
+
+        navigate ('./course')
     }
 
     return (
