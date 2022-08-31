@@ -18,7 +18,10 @@ const App = () => {
 
   return (
     <div className="App">
-
+      {schoolData.map((data) => {
+        <div>
+        </div>
+      })}
     </div>
   );
 }
