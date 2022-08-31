@@ -2,8 +2,18 @@
 const Course = ({course, teacher}) => {
 
 
-    const handleJoinClass =()=>{
+    const handleJoinClass =(user_id)=>{
         // update the seat in the course with the student id
+        fetch('http://localhost:3000/seats', {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                course_id: course.id,
+                student_id: 1 // set this to user_id
+            }),
+        })
     }
     // console.log("school data", schoolData?.courses)
 
