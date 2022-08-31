@@ -30,7 +30,7 @@ const Course = ({course, teacher}) => {
                 <h1>Course Description</h1>
                 <p>*Course Description*
                     <br/>
-                    *available seats from capacity*
+                    Course capacity: {course.capacity}
                 </p>
             
             </div>
