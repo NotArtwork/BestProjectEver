@@ -32,4 +32,6 @@ Rails.application.routes.draw do
   post '/seats', to: 'seats#create'
   patch '/seats/:id', to: 'seats#update'
 
+  get "/schools", to: "schools#show"
+
 end
