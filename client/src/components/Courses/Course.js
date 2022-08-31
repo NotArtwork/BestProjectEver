@@ -16,7 +16,7 @@ const Course = ({course, teacher}) => {
             <h1>{course.name}</h1>
             <div className='teacher-left'>
                 <h2>Teacher</h2>
-                <img src="https://thumbs.dreamstime.com/b/strict-muslim-teacher-controls-strict-muslim-teacher-controls-her-students-sitting-desk-woman-works-school-144410793.jpg"/>
+                <img src={teacher.picture} alt="image of teacher"/>
             </div>
 
             <div className='teacher-right'>
