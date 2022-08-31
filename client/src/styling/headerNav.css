@@ -1,0 +1,10 @@
+.header {
+    position: relative;
+    text-align: center;
+}
+
+.navbar {
+    position: relative;
+    margin: 0% 10% 0% 10%;
+    display: inline;
+}

@@ -1,3 +1,9 @@
+import './styling/headerNav.css'
+import './styling/home.css'
+import './styling/course.css'
+import './App.css'
+
+
 import React, { useState, useEffect} from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
@@ -47,7 +53,9 @@ const App = () => {
       <NavBar/>
       <Routes > 
         <Route path="/" element={ <Home schoolData={schoolData} setCurrentCourse={setCurrentCourse}/>} />
+
         <Route path="/course" element={<Course course={currentCourse} teacher={teacherData.find(teacher => teacher.id === currentCourse.teacher_id)}/>} />
+
         {/* <Route path="/course/fcaw" element={<Course schoolData={schoolData[1]}/>} />
         <Route path="/course/dftjd" element={<Course schoolData={schoolData[2]}/>} /> */}
 
