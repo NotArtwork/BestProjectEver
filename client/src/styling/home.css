@@ -1,0 +1,25 @@
+.home{
+   display: flex;
+   margin: 3%;
+}
+
+
+.school-card {
+    border: 1px solid black;
+    border-radius: 5px;
+    position: relative;
+    margin: 1%;
+    padding: 1%;
+    width: 29%;
+    height: 200px;
+}
+
+.course-list {
+    position: relative;
+    top: 8%;
+    left:5%;
+    max-width: 85%;
+    overflow: hidden; 
+    height: 90px;
+    overflow-y:scroll;
+}

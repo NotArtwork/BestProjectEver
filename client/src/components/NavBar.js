@@ -2,7 +2,6 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
 
-
 const NavBar = () => {
     let navigate = useNavigate(); 
 
@@ -13,7 +12,7 @@ const NavBar = () => {
 
   return (
     <div className="navbar">
-     <h3 onClick={handleClickHome}>Home</h3>
+      <h4 onClick={handleClickHome}>Home</h4>
     </div>
   );
 }
