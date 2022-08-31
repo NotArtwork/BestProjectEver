@@ -1,40 +1,34 @@
-import React from 'react'
+import React, { useState, useEffect} from 'react'
+import { useNavigate } from 'react-router-dom'
 
 
 
-const SchoolCard = ({school}) => {
-
-    const [courseData, setCourseData] = useState([]) //not convinced we need this here
 
 
-    
-   
-    useEffect(() => {
-
-        const getCourse = async () => {
-          let req = await fetch('http://localhost:3000/courses')
-          let res = await req.json()
-          console.log(res)
-          setCourseData(res)
-        //   I know that is incorrect but that's the gist of it
-        }
-        getCourse()
-      }, [])
+const SchoolCard = ({school, setCurrentCourse}) => {
+    let navigate = useNavigate(); 
 
 
-    const handleCourseClick =(event)=>{
-
+    const handleCourseClick =(course)=>{
+      console.log("I am being clicked", course)
+      setCurrentCourse(course)
+      navigate ('./course')
     }
 
+    
     return (
-        <div className="school-card">
-         <h3>schoolname</h3>
-         <ul>
-            <li>course onClick={handleCourseClick}</li>
-            {/* I'm too tired right now but I need to pull all the courses from the courses table into a list
-            that have the school_id = the current {school.id} I think that's something like find_by(school_id: {school.id}) 
-            and we want to be able to do an onClick event on each of these to navigate us to the specific Course.js (handleCourseClick)*/}
-         </ul>
+      <div className="school-card">
+      <h3>{school.name}</h3>
+ 
+     {school.courses.map( (course) => {
+      return (
+        <li className= "course" onClick={() => handleCourseClick(course)} key={course.id}>{
+          course.name}
+        </li>
+     )}
+      )}
+            
+
         </div>
       );
 }
