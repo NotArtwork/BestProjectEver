@@ -11,6 +11,8 @@ import Course from './components/Courses/Course';
 const App = () => {
 
   const [schoolData, setSchoolData] = useState([])
+  const [teacherData, setTeacherData] = useState([])
+
   const [currentCourse, setCurrentCourse] = useState({})
 
 
@@ -24,10 +26,18 @@ const App = () => {
       setSchoolData(res)
     }
     getSchool()
+
+    const getTeachers = async () => {
+      let req = await fetch('http://localhost:3000/teachers')
+      let res = await req.json()
+      setTeacherData(res)
+    }
+    getTeachers()
   }, [])
 
 
-  
+
+  console.log("teacherData", teacherData)
 
 
   return (
@@ -36,7 +46,7 @@ const App = () => {
       <NavBar/>
       <Routes > 
         <Route path="/" element={ <Home schoolData={schoolData} setCurrentCourse={setCurrentCourse}/>} />
-        <Route path="/course/fuckit" element={<Course course={currentCourse} name={schoolData[0]}/>} />
+        <Route path="/course" element={<Course course={currentCourse} teacher= {teacherData[currentCourse.teacher_id]}/>} />
         {/* <Route path="/course/fcaw" element={<Course schoolData={schoolData[1]}/>} />
         <Route path="/course/dftjd" element={<Course schoolData={schoolData[2]}/>} /> */}
 

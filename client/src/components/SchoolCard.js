@@ -1,14 +1,18 @@
 import React, { useState, useEffect} from 'react'
+import { useNavigate } from 'react-router-dom'
+
 
 
 
 
 const SchoolCard = ({school, setCurrentCourse}) => {
+    let navigate = useNavigate(); 
 
 
     const handleCourseClick =(course)=>{
       console.log("I am being clicked", course)
       setCurrentCourse(course)
+      navigate ('./course')
     }
 
     
