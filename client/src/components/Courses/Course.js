@@ -17,7 +17,7 @@ const Course = ({course, teacher}) => {
     // console.log("school data", schoolData?.courses)
 
 
-    console.log(course)
+    console.log("course from Course.js", course)
     return(
 
         <div>

@@ -12,8 +12,9 @@ const App = () => {
 
   const [schoolData, setSchoolData] = useState([])
   const [teacherData, setTeacherData] = useState([])
-
   const [currentCourse, setCurrentCourse] = useState({})
+  console.log('teacher data', teacherData)
+  console.log('current course', currentCourse)
 
 
 
@@ -37,7 +38,7 @@ const App = () => {
 
 
 
-  console.log("teacherData", teacherData)
+  console.log("App.js schoolData", schoolData)
 
 
   return (
@@ -46,7 +47,7 @@ const App = () => {
       <NavBar/>
       <Routes > 
         <Route path="/" element={ <Home schoolData={schoolData} setCurrentCourse={setCurrentCourse}/>} />
-        <Route path="/course" element={<Course course={currentCourse} teacher= {teacherData[currentCourse.teacher_id]}/>} />
+        <Route path="/course" element={<Course course={currentCourse} teacher={teacherData.find(teacher => teacher.id === currentCourse.teacher_id)}/>} />
         {/* <Route path="/course/fcaw" element={<Course schoolData={schoolData[1]}/>} />
         <Route path="/course/dftjd" element={<Course schoolData={schoolData[2]}/>} /> */}
 
