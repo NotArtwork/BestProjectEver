@@ -33,4 +33,5 @@ Rails.application.routes.draw do
   patch '/seats/:id', to: 'seats#update'
 
   get "/schools", to: "schools#show"
+
 end

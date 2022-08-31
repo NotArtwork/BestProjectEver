@@ -36,7 +36,3 @@ course3 = Course.create(name: "Cooking", capacity: 11, teacher_id: teacher3.id, 
 seat1 = Seat.create(course_id: course1.id, student_id: stu1.id)
 seat2 = Seat.create(course_id: course2.id, student_id: stu3.id)
 seat3 = Seat.create(course_id: course3.id, student_id: stu2.id)
-
-seat1 = Seat.create(course_id: course1.id, student_id: stu1.id)
-seat2 = Seat.create(course_id: course2.id, student_id: stu3.id)
-seat3 = Seat.create(course_id: course3.id, student_id: stu2.id)
