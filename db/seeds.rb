@@ -8,9 +8,9 @@ school1 = School.create(name: "Fundamental University College of Knowledge in In
 school2 = School.create(name: "Flatiron Can't Afford Wifi", street_address: "11 Broadway")
 school3 = School.create(name: "Don't Feed The Junior Devs!", street_address: "Random Startup")
 
-teacher1 = Teacher.create(first_name: "Zach", last_name: "Solimon")
-teacher2 = Teacher.create(first_name: "Aaron", last_name: "Fowlkes")
-teacher3 = Teacher.create(first_name: "James", last_name: "Bond")
+teacher1 = Teacher.create(first_name: "Zach", last_name: "Solimon", school_id: school1.id)
+teacher2 = Teacher.create(first_name: "Aaron", last_name: "Fowlkes", school_id: school1.id)
+teacher3 = Teacher.create(first_name: "James", last_name: "Bond", school_id: school1.id)
 
 stu1 = Student.create(first_name: "Antonio", last_name: "Arce")
 stu2 = Student.create(first_name: "Haala", last_name: "Al-Hadithy")
@@ -35,4 +35,3 @@ course3 = Course.create(name: "Cooking", capacity: 11, teacher_id: teacher3.id, 
 seat1 = Seat.create(course_id: course1.id, student_id: stu1.id)
 seat2 = Seat.create(course_id: course2.id, student_id: stu3.id)
 seat3 = Seat.create(course_id: course3.id, student_id: stu2.id)
-
