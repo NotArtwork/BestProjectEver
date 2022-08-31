@@ -30,6 +30,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_30_190217) do
   create_table "seats", force: :cascade do |t|
     t.integer "course_id"
     t.integer "student_id"
+    t.boolean "is_assigned"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -44,7 +45,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_30_190217) do
   create_table "teachers", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
-    t.integer "school_id"
+    t.string "picture"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
