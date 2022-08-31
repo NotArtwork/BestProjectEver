@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   root "schools#index"
 
   get "/courses", to: "courses#index"
+  get "/schools", to: "schools#show"
 end
