@@ -1,13 +1,13 @@
 
-const Course = (schoolData) => {
+const Course = ({course}) => {
  
 
     const handleJoinClass =()=>{
         // update the seat in the course with the student id
     }
-console.log("school data", schoolData.name)
+    // console.log("school data", schoolData?.courses)
 
-    
+    console.log(course)
     return(
 
         <div>

@@ -3,12 +3,12 @@ import React, { useState, useEffect} from 'react'
 
 
 
-const SchoolCard = ({school}) => {
+const SchoolCard = ({school, setCurrentCourse}) => {
 
 
-  console.log(school.courses)
-    const handleCourseClick =(event)=>{
-
+    const handleCourseClick =(course)=>{
+      console.log("I am being clicked", course)
+      setCurrentCourse(course)
     }
 
     
@@ -18,7 +18,7 @@ const SchoolCard = ({school}) => {
  
      {school.courses.map( (course) => {
       return (
-        <li className= "course" onClick={handleCourseClick} key={course.id}>{
+        <li className= "course" onClick={() => handleCourseClick(course)} key={course.id}>{
           course.name}
         </li>
      )}

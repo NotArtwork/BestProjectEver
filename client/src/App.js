@@ -11,6 +11,7 @@ import Course from './components/Courses/Course';
 const App = () => {
 
   const [schoolData, setSchoolData] = useState([])
+  const [currentCourse, setCurrentCourse] = useState({})
 
 
 
@@ -25,10 +26,8 @@ const App = () => {
     getSchool()
   }, [])
 
-  // console.log("app school data", schoolData[0])
 
   
-
 
 
   return (
@@ -36,10 +35,10 @@ const App = () => {
       <Header/>
       <NavBar/>
       <Routes > 
-        <Route path="/" element={ <Home schoolData={schoolData}/>} />
-        <Route path="/course/fuckit" element={<Course schoolData={schoolData[0]} name={schoolData[0]}/>} />
-        <Route path="/course/fcaw" element={<Course schoolData={schoolData[1]}/>} />
-        <Route path="/course/dftjd" element={<Course schoolData={schoolData[2]}/>} />
+        <Route path="/" element={ <Home schoolData={schoolData} setCurrentCourse={setCurrentCourse}/>} />
+        <Route path="/course/fuckit" element={<Course course={currentCourse} name={schoolData[0]}/>} />
+        {/* <Route path="/course/fcaw" element={<Course schoolData={schoolData[1]}/>} />
+        <Route path="/course/dftjd" element={<Course schoolData={schoolData[2]}/>} /> */}
 
       </Routes > 
     </BrowserRouter>
