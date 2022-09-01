@@ -15,19 +15,19 @@ const SchoolCard = ({school, setCurrentCourse}) => {
     
     return (
       <div className="school-card">
-      <h3>{school.name}</h3>
-      <div className="course-list">
-        {school.courses.map( (course) => {
-          return (
-            <li className= "course" onClick={() => handleCourseClick(course)} key={course.id}>{
-              course.name}
-            </li>
+        <h3>{school.name}</h3>
+        <div className="course-list">
+          {school.courses.map( (course) => {
+            return (
+              <li className= "course-item" onClick={() => handleCourseClick(course)} key={course.id}>{
+                course.name}
+              </li>
+            )}
           )}
-        )}
-      </div>
-
         </div>
-      );
+
+      </div>
+    );
 }
 
 export default SchoolCard;

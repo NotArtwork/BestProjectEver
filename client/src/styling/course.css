@@ -1,0 +1,30 @@
+
+.course{
+    border: 1px solid white;
+    border-radius: 20px;
+    position: relative;
+    margin: 10%;
+    margin-top: 8%;
+    padding: 1%;
+    width: 80%;
+    background-color: white;
+    opacity: 0.9;
+}
+
+.teacher{
+    display: flex;
+}
+
+.teacher-image {
+    max-height: 200px;
+    height: auto;
+    margin-left: 5%;
+    margin-right: 20%;
+}
+
+
+.description{
+    width: 60%;
+    margin-left: 5%;
+
+}
