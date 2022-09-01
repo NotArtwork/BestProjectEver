@@ -54,12 +54,26 @@ const Course = ({course, teacher, seatData, studentsInCourse}) => {
     // console.log("course from Course.js", course)
     return(
 
-        <div>
-            <h1>{course.name}</h1>
-            <div className='teacher-left'>
-                <h2>Teacher</h2>
-                <img src={teacher?.picture} alt="image of teacher"/>
-            </div>
+
+        <div className="course">
+
+                <h1>{course.name}</h1>
+                <div class= "teacher">
+                    <img class= "teacher-image" src={teacher.picture} alt="image of teacher"/>
+                    <h2>Teacher: <br/> {teacher.first_name} {teacher.last_name}</h2>
+
+                </div>
+                
+                <div class= "description">                
+                    <h2>Course Description</h2>
+                    <p> {course.course_description} </p>
+                </div>
+
+               
+                Course capacity: {course.capacity}
+                <br></br>
+                <br></br>
+
 
             <div className='teacher-right'>
 
@@ -67,7 +81,6 @@ const Course = ({course, teacher, seatData, studentsInCourse}) => {
                 <h1>{teacher.last_name}</h1>
                 
                 
-
             {/* {isClassFull ? isButtonClicked ? <button onClick={handleLeaveClass}>Leave Class</button> : <button onClick={handleJoinClass}>Join Class</button> : alert("class is full")} */}
             {!isClassFull && (isButtonClicked ? <button onClick={handleLeaveClass}>Leave Class</button> : <button onClick={handleJoinClass}>Join Class</button>)}
             
@@ -81,16 +94,10 @@ const Course = ({course, teacher, seatData, studentsInCourse}) => {
                 </p>
             
             </div>
-
         </div>
 
 
-
-            
-
     )
-
-
 }
 
 
