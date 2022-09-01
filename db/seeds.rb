@@ -32,6 +32,7 @@ course1 = Course.create(name: "SSL", capacity: 10, teacher_id: teacher1.id, scho
 course2 = Course.create(name: "MUA", capacity: 12, teacher_id: teacher2.id, school_id: school1.id, course_description:"We will get you half way to an insta baddie.")
 course3 = Course.create(name: "Music", capacity: 11, teacher_id: teacher3.id, school_id: school1.id, course_description:"Maybe learn to play more than just Wonderwall on the guituar dude. Consider it.")
 
+
 seat1 = Seat.create(course_id: course1.id, student_id: stu1.id)
 seat2 = Seat.create(course_id: course2.id, student_id: stu3.id)
 seat3 = Seat.create(course_id: course3.id, student_id: stu2.id)
