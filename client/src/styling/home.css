@@ -1,0 +1,48 @@
+.home{
+   display: flex;
+   flex-wrap: wrap;
+   text-align: center;
+}
+
+.video-background {
+    position: fixed;
+    height: 110vh;
+    width: 100%;
+    object-fit: fill;
+    z-index: -1;
+    display: block;
+    margin: 0 auto;
+}
+
+.school-card {
+    border: 1px solid white;
+    border-radius: 20px;
+    position: relative;
+    margin: 1%;
+    margin-top: 10%;
+    padding: 1%;
+    width: 400px;
+    height: 200px;
+    background-color: white;
+    opacity: 0.9;
+    box-shadow: -12px -3px 31px -7px rgba(255, 252, 252, 0.9);
+}
+
+.course-list {
+    position: relative;
+    top: 8%;
+    left:6%;
+    max-width: 85%;
+    overflow: hidden; 
+    height: 90px;
+    overflow-y:scroll;
+    text-align: left;
+}
+
+.course-item {
+    margin: 6px;
+}
+
+.course-item:hover {
+    color: grey;
+}

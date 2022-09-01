@@ -1,3 +1,9 @@
+import './styling/headerNav.css'
+import './styling/home.css'
+import './styling/course.css'
+import './App.css'
+
+
 import React, { useState, useEffect} from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import axios from 'axios'
@@ -45,6 +51,14 @@ const App = (props) => {
   const [schoolData, setSchoolData] = useState([])
   const [teacherData, setTeacherData] = useState([])
   const [currentCourse, setCurrentCourse] = useState({})
+  const [studentsInCourse, setStudentsInCourse] = useState([])
+  const [seatData, setSeatData] = useState([])
+  const [studentData, setStudentData] = useState([])
+
+
+  // console.log('teacher data', teacherData)
+  // console.log('current course', currentCourse)
+  // console.log('currentCoursekeyslength', Object.keys(currentCourse).length)
 
 
 
@@ -64,21 +78,46 @@ const App = (props) => {
       setTeacherData(res)
     }
     getTeachers()
+
+    const getSeats = async () => {
+      let req = await fetch('http://localhost:3000/seats')
+      let res = await req.json()
+      setSeatData(res)
+    }
+    getSeats()
+
+
+    
   }, [])
 
+  useEffect(() => {
+    const getStudentsThroughCourse = async () => {
+      let req = await fetch(`http://localhost:3000/courses/${currentCourse.id}/students`)
+      let res = await req.json()
+      setStudentsInCourse(res)
+      // console.log('studentsInCourse', res)
 
+    }
+    if (Object.keys(currentCourse).length !== 0){getStudentsThroughCourse()}
 
-  console.log("teacherData", teacherData)
+  }, [currentCourse])
 
+// console.log('currentCourse', currentCourse.id)
 
   return (
     <BrowserRouter>
       <NavBar/>
       <Routes > 
         <Route path="/" element={ <Home schoolData={schoolData} setCurrentCourse={setCurrentCourse}/>} />
+<<<<<<< HEAD
         <Route path="/course" element={<Course course={currentCourse} teacher= {teacherData[currentCourse.teacher_id]}/>} />
         <Route path="/login" element={<Login handleLogin={handleLogin} />} />
         <Route path="/signup" element={<Signup />} />
+=======
+
+        <Route path="/course" element={<Course seatData={seatData} course={currentCourse} teacher={teacherData.find(teacher => teacher.id === currentCourse.teacher_id)} studentsInCourse={studentsInCourse}/>} />
+
+>>>>>>> 83a758bb56975aa9b795cff4f92d9b61fa0532c2
         {/* <Route path="/course/fcaw" element={<Course schoolData={schoolData[1]}/>} />
         <Route path="/course/dftjd" element={<Course schoolData={schoolData[2]}/>} /> */}
 

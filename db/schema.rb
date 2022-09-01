@@ -14,6 +14,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_31_204102) do
   create_table "courses", force: :cascade do |t|
     t.string "name"
     t.integer "capacity"
+    t.text "course_description"
     t.integer "teacher_id"
     t.integer "school_id"
     t.datetime "created_at", null: false
@@ -30,6 +31,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_31_204102) do
   create_table "seats", force: :cascade do |t|
     t.integer "course_id"
     t.integer "student_id"
+    t.boolean "is_assigned"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -44,6 +46,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_31_204102) do
   create_table "teachers", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
+<<<<<<< HEAD
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -52,6 +55,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_31_204102) do
     t.string "username"
     t.string "email"
     t.string "password_digest"
+=======
+    t.string "picture"
+>>>>>>> 83a758bb56975aa9b795cff4f92d9b61fa0532c2
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

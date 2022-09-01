@@ -20,6 +20,25 @@ class SeatsController < ApplicationController
             render json: {error: seat.errors.full_messages}, status: 422
         end
     end
+    def destroy
+        seat = Seat.find_by!(id: params[:id])
+        if seat.destroy
+            render json: seat
+        else
+            render json: {error: seat.errors.full_messages}, status: 422
+        end
+    end
+
+    def destroy_based_on
+        seat = Seat.find_by(course_id: params[:course_id], student_id: params[:student_id])
+        if seat.destroy
+        render json: seat
+        else
+            render json: {error: seat.errors.full_messages}, status: 422
+        end
+    end
+
+
     private
     def seat_params
         params.permit(:student_id, :is_available)

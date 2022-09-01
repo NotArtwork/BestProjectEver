@@ -1,3 +1,4 @@
+
 .App {
   text-align: center;
   color: white;
@@ -48,14 +49,52 @@
   margin-top: 80px;
 }
 
-a {
-  color: white;
+body {
+  background-color: black;
+  /* color: white; */
 }
+
+
+h1{
+  font-family:georgia,garamond,serif;
+}
+
+h2{
+  font-family:georgia,garamond,serif;
+  font-size: 20px;
+}
+
+
+h4{
+  font-family:georgia,garamond,serif;
+  font-size: 15px;
+}
+
+
+button {
+  background-color: rgb(169, 169, 169);
+  border: none;
+  border-radius: 20px;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
 
 a:hover {
   cursor: pointer;
   text-decoration: underline;
 }
 
+button:hover {
+  background-color: rgb(97, 97, 97);
+}
 
-
+li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
