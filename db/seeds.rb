@@ -8,9 +8,9 @@ school1 = School.create(name: "Fundamental University College of Knowledge in In
 school2 = School.create(name: "Flatiron Can't Afford Wifi", street_address: "11 Broadway")
 school3 = School.create(name: "Don't Feed The Junior Devs!", street_address: "Random Startup")
 
-teacher1 = Teacher.create(first_name: "Zach", last_name: "Solimon", school_id: school1.id)
-teacher2 = Teacher.create(first_name: "Aaron", last_name: "Fowlkes", school_id: school1.id)
-teacher3 = Teacher.create(first_name: "James", last_name: "Bond", school_id: school1.id)
+teacher1 = Teacher.create!(first_name: "Zach", last_name: "Solimon", picture: "", school_id: )
+teacher2 = Teacher.create!(first_name: "Aaron", last_name: "Fowlkes", picture: "../client/src/images/Aaron.jpg")
+teacher3 = Teacher.create!(first_name: "James", last_name: "Bond", picture:"https://i.pinimg.com/564x/0e/01/c8/0e01c867c9a1fa680c741f32d1f8878a.jpg")
 
 stu1 = Student.create(first_name: "Antonio", last_name: "Arce")
 stu2 = Student.create(first_name: "Haala", last_name: "Al-Hadithy")
