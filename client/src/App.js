@@ -22,9 +22,11 @@ const App = () => {
   const [studentsInCourse, setStudentsInCourse] = useState([])
   const [seatData, setSeatData] = useState([])
   const [studentData, setStudentData] = useState([])
-  console.log('teacher data', teacherData)
-  console.log('current course', currentCourse)
-  console.log('currentCoursekeyslength', Object.keys(currentCourse).length)
+
+
+  // console.log('teacher data', teacherData)
+  // console.log('current course', currentCourse)
+  // console.log('currentCoursekeyslength', Object.keys(currentCourse).length)
 
 
 
@@ -61,8 +63,8 @@ const App = () => {
       let req = await fetch(`http://localhost:3000/courses/${currentCourse.id}/students`)
       let res = await req.json()
       setStudentsInCourse(res)
-      console.log('studentsInCourse', res)
-      
+      // console.log('studentsInCourse', res)
+
     }
     if (Object.keys(currentCourse).length !== 0){getStudentsThroughCourse()}
 
