@@ -66,21 +66,21 @@ const App = (props) => {
   useEffect(() => {
 
     const getSchool = async () => {
-      let req = await fetch('http://localhost:3000')
+      let req = await fetch('http://localhost:3001/')
       let res = await req.json()
       setSchoolData(res)
     }
     getSchool()
 
     const getTeachers = async () => {
-      let req = await fetch('http://localhost:3000/teachers')
+      let req = await fetch('http://localhost:3001/teachers')
       let res = await req.json()
       setTeacherData(res)
     }
     getTeachers()
 
     const getSeats = async () => {
-      let req = await fetch('http://localhost:3000/seats')
+      let req = await fetch('http://localhost:3001/seats')
       let res = await req.json()
       setSeatData(res)
     }
@@ -92,7 +92,7 @@ const App = (props) => {
 
   useEffect(() => {
     const getStudentsThroughCourse = async () => {
-      let req = await fetch(`http://localhost:3000/courses/${currentCourse.id}/students`)
+      let req = await fetch(`http://localhost:3001/courses/${currentCourse.id}/students`)
       let res = await req.json()
       setStudentsInCourse(res)
       // console.log('studentsInCourse', res)
@@ -109,15 +109,9 @@ const App = (props) => {
       <NavBar/>
       <Routes > 
         <Route path="/" element={ <Home schoolData={schoolData} setCurrentCourse={setCurrentCourse}/>} />
-<<<<<<< HEAD
-        <Route path="/course" element={<Course course={currentCourse} teacher= {teacherData[currentCourse.teacher_id]}/>} />
         <Route path="/login" element={<Login handleLogin={handleLogin} />} />
         <Route path="/signup" element={<Signup />} />
-=======
-
         <Route path="/course" element={<Course seatData={seatData} course={currentCourse} teacher={teacherData.find(teacher => teacher.id === currentCourse.teacher_id)} studentsInCourse={studentsInCourse}/>} />
-
->>>>>>> 83a758bb56975aa9b795cff4f92d9b61fa0532c2
         {/* <Route path="/course/fcaw" element={<Course schoolData={schoolData[1]}/>} />
         <Route path="/course/dftjd" element={<Course schoolData={schoolData[2]}/>} /> */}
 
