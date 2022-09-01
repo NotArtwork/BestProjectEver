@@ -40,14 +40,11 @@ const Course = ({course, teacher}) => {
                 <br></br>
 
 
-<<<<<<< HEAD
-=======
             <div className='teacher-right'>
 
                 <h1>{teacher.first_name}</h1>
                 <h1>{teacher.last_name}</h1>
 
->>>>>>> fc7c3b19a7fbdb3a4e421ac78194ed6e2c16e808
                 <button onClick={handleJoinClass}>Join Class</button>
 
                 
