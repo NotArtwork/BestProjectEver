@@ -1,7 +1,7 @@
-import {useEffect, useState} from 'react'
 
+import {useEffect, useState} from 'react'
 const Course = ({course, teacher, seatData, studentsInCourse}) => {
-    
+
     const [isButtonClicked, setIsButtonClicked] = useState(false)
     // console.log('student lenth', studentsInCourse.length)
     
@@ -10,10 +10,6 @@ const Course = ({course, teacher, seatData, studentsInCourse}) => {
     useEffect(() => {
         isClassFull && alert("class is full")
     }, [studentsInCourse.length])
-    
-// console.log("course in Course.js", course)
-// console.log("course.capacity", course.capacity)
-// console.log("studentsInCourse.length_Course.js", studentsInCourse.length)
 
     const handleJoinClass =(user_id)=>{
         // update the seat in the course with the student id
@@ -47,57 +43,57 @@ const Course = ({course, teacher, seatData, studentsInCourse}) => {
 
 
     }
-
     // console.log("school data", schoolData?.courses)
 
 
-    // console.log("course from Course.js", course)
+    console.log("course from Course.js", course)
     return(
-
 
         <div className="course">
 
-                <h1>{course.name}</h1>
-                <div class= "teacher">
-                    <img class= "teacher-image" src={teacher.picture} alt="image of teacher"/>
-                    <h2>Teacher: <br/> {teacher.first_name} {teacher.last_name}</h2>
+        <h1>{course.name}</h1>
+        <div class= "teacher">
+            <img class= "teacher-image" src={teacher.picture} alt="image of teacher"/>
+            <h2>Teacher: <br/> {teacher.first_name} {teacher.last_name}</h2>
 
-                </div>
-                
-                <div class= "description">                
-                    <h2>Course Description</h2>
-                    <p> {course.course_description} </p>
-                </div>
-
-               
-                Course capacity: {course.capacity}
-                <br></br>
-                <br></br>
-
-
-            <div className='teacher-right'>
-
-                <h1>{teacher.first_name}</h1>
-                <h1>{teacher.last_name}</h1>
-                
-                
-            {/* {isClassFull ? isButtonClicked ? <button onClick={handleLeaveClass}>Leave Class</button> : <button onClick={handleJoinClass}>Join Class</button> : alert("class is full")} */}
-            {!isClassFull && (isButtonClicked ? <button onClick={handleLeaveClass}>Leave Class</button> : <button onClick={handleJoinClass}>Join Class</button>)}
-            
-            </div>
-
-            <div className='teacher-bottom'>
-                <h1>Course Description</h1>
-                <p>*Course Description*
-                    <br/>
-                    Course capacity: {course.capacity}
-                </p>
-            
-            </div>
+        </div>
+        
+        <div class= "description">                
+            <h2>Course Description</h2>
+            <p> {course.course_description} </p>
         </div>
 
+       
+        Course capacity: {course.capacity}
+        <br></br>
+        <br></br>
+
+
+    <div className='teacher-right'>
+
+        <h1>{teacher.first_name}</h1>
+        <h1>{teacher.last_name}</h1>
+        
+        
+    {/* {isClassFull ? isButtonClicked ? <button onClick={handleLeaveClass}>Leave Class</button> : <button onClick={handleJoinClass}>Join Class</button> : alert("class is full")} */}
+    {!isClassFull && (isButtonClicked ? <button onClick={handleLeaveClass}>Leave Class</button> : <button onClick={handleJoinClass}>Join Class</button>)}
+    
+    </div>
+
+    <div className='teacher-bottom'>
+        <h1>Course Description</h1>
+        <p>*Course Description*
+            <br/>
+            Course capacity: {course.capacity}
+        </p>
+    
+    </div>
+</div>
+            
 
     )
+
+
 }
 
 
