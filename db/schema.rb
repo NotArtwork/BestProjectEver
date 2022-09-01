@@ -14,6 +14,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_30_190217) do
   create_table "courses", force: :cascade do |t|
     t.string "name"
     t.integer "capacity"
+    t.text "course_description"
     t.integer "teacher_id"
     t.integer "school_id"
     t.datetime "created_at", null: false
