@@ -1,13 +1,18 @@
 import {useState} from 'react'
 
-const Course = ({course, teacher, seatData}) => {
+const Course = ({course, teacher, seatData, studentsInCourse}) => {
 
     const [isButtonClicked, setIsButtonClicked] = useState(false)
     
-
+console.log("course in Course.js", course)
+console.log("course.capacity", course.capacity)
+console.log("studentsInCourse.length_Course.js", studentsInCourse.length)
 
     const handleJoinClass =(user_id)=>{
         // update the seat in the course with the student id
+
+        console.log("studentsInCourse.length < course.capacity in handleJoinClass", studentsInCourse.length < course.capacity)
+
         setIsButtonClicked(!isButtonClicked)
         fetch('http://localhost:3000/seats', {
             method: "POST",
@@ -18,7 +23,7 @@ const Course = ({course, teacher, seatData}) => {
                 course_id: course.id,
                 student_id: 1 // set this to user_id
             }),
-        })
+        }) 
     }
 
     const handleLeaveClass = () => {
@@ -53,10 +58,11 @@ const Course = ({course, teacher, seatData}) => {
 
                 <h1>{teacher.first_name}</h1>
                 <h1>{teacher.last_name}</h1>
-                {isButtonClicked ? 
+                {studentsInCourse.length < course.capacity ? isButtonClicked ? <button onClick={handleLeaveClass}>Leave Class</button> : <button onClick={handleJoinClass}>Join Class</button> : alert("class is full")}
+                {/* {isButtonClicked ? 
                 <button onClick={handleLeaveClass}>Leave Class</button> :
-                <button onClick={handleJoinClass}>Join Class</button>
-}
+                <button onClick={studentsInCourse.length < course.capacity ? handleJoinClass : alert("Class is full")}>Join Class</button>
+} */}
             </div>
 
             <div className='teacher-bottom'>

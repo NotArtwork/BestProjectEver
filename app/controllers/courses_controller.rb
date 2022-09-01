@@ -8,6 +8,11 @@ class CoursesController < ApplicationController
         course = Course.find_by(id: params[:id])
         render json: course
     end
+    def show_students
+        course = Course.find_by(id: params[:id])
+        students = course.students
+        render json: students
+    end
     def create
         course = Course.create!(name: params[:name], capacity: params[:capacity], teacher_id: params[:teacher_id], school_id: params[:school_id])
         render json: course

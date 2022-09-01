@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   get "/courses", to: "courses#index"
   get '/courses/:id', to: 'courses#show'
+  get '/courses/:id/students', to: 'courses#show_students'
   post '/courses', to: 'courses#create'
   patch '/courses/:id', to: 'courses#update'
 

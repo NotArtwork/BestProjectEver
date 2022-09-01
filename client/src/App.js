@@ -19,9 +19,12 @@ const App = () => {
   const [schoolData, setSchoolData] = useState([])
   const [teacherData, setTeacherData] = useState([])
   const [currentCourse, setCurrentCourse] = useState({})
+  const [studentsInCourse, setStudentsInCourse] = useState([])
   const [seatData, setSeatData] = useState([])
+  const [studentData, setStudentData] = useState([])
   console.log('teacher data', teacherData)
   console.log('current course', currentCourse)
+  console.log('currentCoursekeyslength', Object.keys(currentCourse).length)
 
 
 
@@ -48,12 +51,24 @@ const App = () => {
       setSeatData(res)
     }
     getSeats()
+
+
+    
   }, [])
 
+  useEffect(() => {
+    const getStudentsThroughCourse = async () => {
+      let req = await fetch(`http://localhost:3000/courses/${currentCourse.id}/students`)
+      let res = await req.json()
+      setStudentsInCourse(res)
+      console.log('studentsInCourse', res)
+      
+    }
+    if (Object.keys(currentCourse).length !== 0){getStudentsThroughCourse()}
 
+  }, [currentCourse])
 
-  // console.log("App.js seatData", seatData)
-
+// console.log('currentCourse', currentCourse.id)
 
   return (
     <BrowserRouter>
@@ -62,7 +77,7 @@ const App = () => {
       <Routes > 
         <Route path="/" element={ <Home schoolData={schoolData} setCurrentCourse={setCurrentCourse}/>} />
 
-        <Route path="/course" element={<Course seatData={seatData} course={currentCourse} teacher={teacherData.find(teacher => teacher.id === currentCourse.teacher_id)}/>} />
+        <Route path="/course" element={<Course seatData={seatData} course={currentCourse} teacher={teacherData.find(teacher => teacher.id === currentCourse.teacher_id)} studentsInCourse={studentsInCourse}/>} />
 
         {/* <Route path="/course/fcaw" element={<Course schoolData={schoolData[1]}/>} />
         <Route path="/course/dftjd" element={<Course schoolData={schoolData[2]}/>} /> */}
