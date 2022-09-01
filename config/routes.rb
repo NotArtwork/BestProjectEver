@@ -31,6 +31,8 @@ Rails.application.routes.draw do
   get '/seats/:id', to: 'seats#show'
   post '/seats', to: 'seats#create'
   patch '/seats/:id', to: 'seats#update'
+  delete '/seats/:id', to: 'seats#destroy'
+  delete '/seats/:course_id/:student_id', to: 'seats#destroy_based_on'
 
   get "/schools", to: "schools#show"
 

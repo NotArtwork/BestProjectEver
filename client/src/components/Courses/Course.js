@@ -1,8 +1,14 @@
-const Course = ({course, teacher}) => {
+import {useState} from 'react'
+
+const Course = ({course, teacher, seatData}) => {
+
+    const [isButtonClicked, setIsButtonClicked] = useState(false)
+    
 
 
     const handleJoinClass =(user_id)=>{
         // update the seat in the course with the student id
+        setIsButtonClicked(!isButtonClicked)
         fetch('http://localhost:3000/seats', {
             method: "POST",
             headers: {
@@ -14,6 +20,22 @@ const Course = ({course, teacher}) => {
             }),
         })
     }
+
+    const handleLeaveClass = () => {
+        setIsButtonClicked(!isButtonClicked)
+
+        fetch(`http://localhost:3000/seats/${course.id}/${1}`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+
+
+
+
+    }
+
     // console.log("school data", schoolData?.courses)
 
 
@@ -24,16 +46,17 @@ const Course = ({course, teacher}) => {
             <h1>{course.name}</h1>
             <div className='teacher-left'>
                 <h2>Teacher</h2>
-                <img src={teacher.picture} alt="image of teacher"/>
+                <img src={teacher?.picture} alt="image of teacher"/>
             </div>
 
             <div className='teacher-right'>
 
                 <h1>{teacher.first_name}</h1>
                 <h1>{teacher.last_name}</h1>
-
+                {isButtonClicked ? 
+                <button onClick={handleLeaveClass}>Leave Class</button> :
                 <button onClick={handleJoinClass}>Join Class</button>
-
+}
             </div>
 
             <div className='teacher-bottom'>
