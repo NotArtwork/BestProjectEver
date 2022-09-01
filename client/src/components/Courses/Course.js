@@ -50,8 +50,10 @@ const Course = ({course, teacher}) => {
                 
 
         </div>
+        </div>
 
     )
 }
+
 
 export default Course;
