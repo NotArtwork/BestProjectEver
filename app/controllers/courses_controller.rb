@@ -25,3 +25,12 @@ class CoursesController < ApplicationController
         params.permit(:name)
     end
 end
+
+school.courses.map((course) => {
+    return(
+        <ul>
+            <li>   </li>
+        
+        </ul>
+    )
+})

@@ -22,6 +22,6 @@ class SeatsController < ApplicationController
     end
     private
     def seat_params
-        params.permit(:student_id)
+        params.permit(:student_id, :is_available)
     end
 end
