@@ -53,11 +53,16 @@ const Course = ({course, teacher, seatData, studentsInCourse}) => {
     return(
 
         <div className="course">
-
-        <h1>{course.name}</h1>
+        
+        <h1 id='course-name'> {course.name}</h1>
         <div class= "teacher">
             <img class= "teacher-image" src={teacher.picture} alt="image of teacher"/>
-            <h2>Teacher: <br/> {teacher.first_name} {teacher.last_name}</h2>
+            
+            <div className='teacher-name'>
+                <h2>Teacher:</h2> 
+                <h1>{teacher.first_name} {teacher.last_name} </h1>
+            </div>
+            
         </div>
         
         <div class= "description">                
@@ -68,23 +73,14 @@ const Course = ({course, teacher, seatData, studentsInCourse}) => {
         <br></br>
         <br></br>
 
-
-
-        
-        
-    {/* {isClassFull ? isButtonClicked ? <button onClick={handleLeaveClass}>Leave Class</button> : <button onClick={handleJoinClass}>Join Class</button> : alert("class is full")} */}
-    {!isClassFull ? (isButtonClicked ? <button onClick={handleLeaveClass}>Leave Class</button> : <button onClick={handleJoinClass}>Join Class</button>): null}
-    
-    
-
+        <div class= "course-bottom">   
+            {!isClassFull ? (isButtonClicked ? <button onClick={handleLeaveClass}>Leave Class</button> : <button onClick={handleJoinClass}>Join Class</button>): null}
             <p> Course capacity: {course.capacity}</p>
+        </div>
 </div>
             
 
     )
-
-
 }
-
 
 export default Course;

@@ -1,0 +1,13 @@
+.courses-table{
+    color: white;
+}
+
+table{
+    position: relative;
+    top: 100px;
+    left: 100px;
+}
+
+td {
+    height: 30px;
+}

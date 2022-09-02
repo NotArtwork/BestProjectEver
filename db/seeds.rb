@@ -8,7 +8,7 @@ school1 = School.create!(name: "Fundamental University College of Knowledge in I
 school2 = School.create!(name: "Flatiron Can't Afford Wifi", street_address: "11 Broadway")
 school3 = School.create!(name: "Don't Feed The Junior Devs!", street_address: "Random Startup")
 
-teacher1 = Teacher.create!(first_name: "Zach", last_name: "Solimon", picture: "../client/src/images/Zach.jpg")
+teacher1 = Teacher.create!(first_name: "Zach", last_name: "Solimon", picture: "https://i.imgur.com/KkYWO9y.jpg")
 teacher2 = Teacher.create!(first_name: "Aaron", last_name: "Fowlkes", picture: "https://i.imgur.com/jRVBRCG.jpg")
 teacher3 = Teacher.create!(first_name: "James", last_name: "Bond", picture:"https://i.pinimg.com/564x/0e/01/c8/0e01c867c9a1fa680c741f32d1f8878a.jpg")
 
